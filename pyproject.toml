@@ -1,0 +1,32 @@
+[project]
+name = "structural-probe-cst"
+version = "0.1.0"
+description = "An implementation of Hewitt et al's 2019 structural probe work using the concrete syntax trees of code fragments taken from multiple languages"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "data",
+    "datasets>=5.1.0",
+    "matplotlib>=3.10.9",
+    "numpy>=2.2.6",
+    "pandas>=2.3.3",
+    "torch>=2.6.0",
+    "tqdm>=4.70.1",
+    "transformers>=5.22.2",
+    "tree-sitter>=0.26.0",
+    "tree-sitter-language-pack>=1.25.0",
+    "tree-sitter-python>=0.25.0",
+]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.3.0",
+]
+
+[tool.uv.workspace]
+members = [
+    "data",
+]
+
+[tool.uv.sources]
+data = { workspace = true }
