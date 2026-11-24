@@ -4,8 +4,8 @@ requires-python = ">=3.13"
 
 [manifest]
 members = [
-    "data",
-    "structural-probe-ast-rewrite",
+    "structural-probe-cst",
+    "utils",
 ]
 
 [[package]]
@@ -423,11 +423,6 @@ sdist = { url = "https://files.pythonhosted.org/packages/a9/95/a3dbbb5028f35eafb
 wheels = [
     { url = "https://files.pythonhosted.org/packages/e7/05/c19819d5e3d95294a6f5947fb9b9629efb316b96de511b418c53d245aae6/cycler-0.12.1-py3-none-any.whl", hash = "sha256:85cef7cff222d8644161529808465972e51340599459b8ac3ccbac5a854e0d30", size = 8321, upload-time = "2023-10-07T05:32:16.783Z" },
 ]
-
-[[package]]
-name = "data"
-version = "0.1.0"
-source = { editable = "data" }
 
 [[package]]
 name = "datasets"
@@ -2185,11 +2180,10 @@ wheels = [
 ]
 
 [[package]]
-name = "structural-probe-ast-rewrite"
+name = "structural-probe-cst"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
-    { name = "data" },
     { name = "datasets" },
     { name = "matplotlib" },
     { name = "numpy" },
@@ -2200,6 +2194,7 @@ dependencies = [
     { name = "tree-sitter" },
     { name = "tree-sitter-language-pack" },
     { name = "tree-sitter-python" },
+    { name = "utils" },
 ]
 
 [package.dev-dependencies]
@@ -2209,7 +2204,6 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "data", editable = "data" },
     { name = "datasets", specifier = ">=5.1.0" },
     { name = "matplotlib", specifier = ">=3.10.9" },
     { name = "numpy", specifier = ">=2.2.6" },
@@ -2220,6 +2214,7 @@ requires-dist = [
     { name = "tree-sitter", specifier = ">=0.26.0" },
     { name = "tree-sitter-language-pack", specifier = ">=1.25.0" },
     { name = "tree-sitter-python", specifier = ">=0.25.0" },
+    { name = "utils", editable = "utils" },
 ]
 
 [package.metadata.requires-dev]
@@ -2496,6 +2491,11 @@ sdist = { url = "https://files.pythonhosted.org/packages/7a/29/6a1391d31cd00ff9e
 wheels = [
     { url = "https://files.pythonhosted.org/packages/0a/66/9a06c2227fedfd4919f0eaaa8b94377d9730882a7e4f95823c9a331ab5e1/tzdata-2026.6-py2.py3-none-any.whl", hash = "sha256:0a10eec6e13ef16b627fabed9a5f2ba61a62b1c67f327305f4e7e412a70b4aec", size = 348210, upload-time = "2026-10-28T09:57:07.276Z" },
 ]
+
+[[package]]
+name = "utils"
+version = "0.1.0"
+source = { editable = "utils" }
 
 [[package]]
 name = "wcwidth"

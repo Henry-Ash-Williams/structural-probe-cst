@@ -12,3 +12,6 @@ wheels/
 # Dataset (both are too large)
 dataset/
 trees.json
+
+# Saved models 
+probes/

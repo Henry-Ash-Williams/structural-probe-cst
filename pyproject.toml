@@ -5,7 +5,7 @@ description = "An implementation of Hewitt et al's 2019 structural probe work us
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-    "data",
+    "utils",
     "datasets>=5.1.0",
     "matplotlib>=3.10.9",
     "numpy>=2.2.6",
@@ -25,8 +25,8 @@ dev = [
 
 [tool.uv.workspace]
 members = [
-    "data",
+    "utils",
 ]
 
 [tool.uv.sources]
-data = { workspace = true }
+utils = { workspace = true }

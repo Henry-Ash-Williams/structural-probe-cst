@@ -11,8 +11,7 @@ from tree_sitter_language_pack import (
     get_language,
     get_parser,
 )
-
-from data import Cst
+from utils.data import Cst
 
 
 @dataclass

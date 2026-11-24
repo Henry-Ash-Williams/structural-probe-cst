@@ -7,8 +7,7 @@ import torch
 import torch.nn.functional as F
 from datasets import Array3D, Dataset, Features, Sequence, Value
 from transformers import AutoModel, AutoTokenizer
-
-from data import Cst
+from utils.data import Cst
 
 MODEL_NAME = "Qwen/Qwen2.5-Coder-0.5B"
 PADDING = 400
@@ -130,7 +129,7 @@ def process_batch(batch, tokenizer, model, device):
 
 def dataset_generator(data, tokenizer, model, device):
     for batch in batched(data, BATCH_SIZE):
-        processed = process_batch(batch, tokenizer)
+        processed = process_batch(batch, tokenizer, model, device)
 
         for item in processed:
             n = len(item.tokens)
