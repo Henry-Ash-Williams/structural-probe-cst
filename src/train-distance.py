@@ -141,4 +141,5 @@ if __name__ == "__main__":
         "-o", "--output-dir", type=str, help="trained probe save location"
     )
     args = arg_parser.parse_args(sys.argv[1:])
+    print(args)
     main(args)

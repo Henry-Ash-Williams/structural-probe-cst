@@ -16,6 +16,7 @@ dependencies = [
     "tree-sitter>=0.26.0",
     "tree-sitter-language-pack>=1.25.0",
     "tree-sitter-python>=0.25.0",
+    "mantel>=2.2.3",
 ]
 
 [dependency-groups]

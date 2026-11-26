@@ -26,7 +26,7 @@ class SupportedLanguage:
         return QueryCursor(q)
 
 
-FUNCTIONS_PER_LANGUAGE = 1000
+FUNCTIONS_PER_LANGUAGE = 2000
 
 
 SUPPORTED_LANGUAGES = {

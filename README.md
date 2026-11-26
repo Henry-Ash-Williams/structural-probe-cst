@@ -25,14 +25,15 @@ To parse the files, and extract function bodies, we use [tree-sitter](https://tr
     - [x] Create distance matrix 
     - [x] Create depth vector 
     - [x] Hidden representations aligned with leaf nodes of CST 
+    - [ ] Config file support
 - [ ] Training 
     - [x] Distance probe 
-    - [ ] Depth probe 
+    - [x] Depth probe 
     - [ ] Baseline 
 - [ ] Evaluation 
     - [ ] Metrics 
 - [ ] Analysis
-    - [ ] Visualisations 
+    - [x] Visualisations 
     - [ ] Ablations 
 
 ## Files 

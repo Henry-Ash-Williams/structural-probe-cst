@@ -1,0 +1,61 @@
+[[language]]
+name = "python" 
+queryString = """(function_definition _)"""
+
+[[language]]
+name = "c" 
+queryString = """(function_definition _)"""
+
+[[language]]
+name = "cpp" 
+queryString = """(function_definition _)"""
+
+[[language]]
+name = "java" 
+queryString = """[
+  (method_declaration _)
+  (constructor_declaration _)
+  (lambda_expression _)
+]"""
+
+[[language]]
+name = "javascript"
+queryString = """[
+  (function_declaration _)
+  (generator_function_declaration _)
+  (function_expression _)
+  (generator_function _)
+  (arrow_function _)
+  (method_definition _)
+]"""
+
+[[language]]
+name = "rust"
+queryString = """[
+  (function_item _)
+  (closure_expression _)
+]"""
+
+[[language]]
+name = "go"
+queryString = """[
+  (function_declaration _)
+  (method_declaration _)
+  (func_literal _)
+]"""
+
+[[language]]
+name = "haskell"
+queryString = """[
+  (function _)
+  (bind _)
+]"""
+
+[[language]]
+name = "php"
+queryString = """[
+  (function_definition _)
+  (method_declaration _)
+  (anonymous_function _)
+  (arrow_function _)
+]"""

@@ -165,7 +165,7 @@ class Cst:
         return self.depth[source.id] + self.depth[target.id] - 2 * lca_depth
 
     @cached_property
-    def root_id(self) -> CstNode:
+    def root_node(self) -> CstNode:
         potential_root_nodes = [node for node in self.nodes if node.is_root()]
 
         assert len(potential_root_nodes) > 0, (
@@ -187,6 +187,38 @@ class Cst:
         A list of all leaf nodes
         """
         return [self.nodes[leaf_id] for leaf_id in self.leaf_indicies]
+
+    @cached_property
+    def leaf_char_spans(self) -> list[tuple[int, int]]:
+        """
+        (start, end) character offsets of each leaf within `self.source`
+        """
+        # Node offsets are bytes, measured from the start of the original file
+        # rather than from the start of this fragment.
+        offset = self.root_node.start
+
+        byte_to_char = []
+        for char_index, char in enumerate(self.source):
+            byte_to_char.extend([char_index] * len(char.encode("utf-8")))
+        byte_to_char.append(len(self.source))
+
+        return [
+            (byte_to_char[leaf.start - offset], byte_to_char[leaf.end - offset])
+            for leaf in self.leaves
+        ]
+
+    @cached_property
+    def leaf_chunks(self) -> list[str]:
+        """
+        The source split at the end of each leaf: chunk `i` is the whitespace
+        before leaf `i` followed by the text of leaf `i`
+        """
+        chunks = []
+        previous_end = 0
+        for _, end in self.leaf_char_spans:
+            chunks.append(self.source[previous_end:end])
+            previous_end = end
+        return chunks
 
     @cached_property
     def num_leaves(self) -> int:

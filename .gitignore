@@ -15,3 +15,5 @@ trees.json
 
 # Saved models 
 probes/
+
+.vscode/
